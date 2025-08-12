@@ -1,3 +1,4 @@
+import 'package:emergency_management_system/services/flask_api_serivce.dart';
 import 'package:flutter/material.dart';
 
 class EmergencyTextField extends StatefulWidget {
@@ -28,11 +29,17 @@ class _EmergencyTextFieldState extends State<EmergencyTextField> {
     super.dispose();
   }
 
-  void _sendMessage() {
+  void _sendMessage(String query) async {
     final text = _controller.text.trim();
     if (text.isEmpty) return;
-    // TODO: handle send message
+    
     _controller.clear();
+
+    try {
+      await callFlaskApi(query);
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -94,7 +101,7 @@ class _EmergencyTextFieldState extends State<EmergencyTextField> {
                       child: IconButton(
                         icon: const Icon(Icons.arrow_upward, size: 24),
                         color: const Color(0xFFFAFAFA),
-                        onPressed: _sendMessage,
+                        onPressed: () => _sendMessage(_controller.text),
                       ),
                     ),
                 ],
