@@ -1,2 +1,0 @@
-D:/Programs/Github_Projects/AI_Hackathon_2025/emergency_management_frontend/build/.cxx/Debug/5e271c2a/x86_64/CMakeFiles/edit_cache.dir
-D:/Programs/Github_Projects/AI_Hackathon_2025/emergency_management_frontend/build/.cxx/Debug/5e271c2a/x86_64/CMakeFiles/rebuild_cache.dir
