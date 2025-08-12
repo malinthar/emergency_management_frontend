@@ -1,0 +1,46 @@
+# Generated files and directories
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.idea/
+build/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+android/.gradle/
+android/local.properties
+android/key.properties
+android/keystores/
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+
+# IDE-specific files
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.bak
+
+# macOS specific files
+.DS_Store
+
+# Android specific files
+android/app/build/
+android/app/*.apk
+android/app/*.aab
+android/app/debug/
+android/app/release/
+
+# iOS specific files
+ios/build/
+ios/*.xcworkspace/
+ios/*.xcodeproj/xcuserdata/
+ios/*.xcodeproj/project.xcworkspace/
+ios/*.xcodeproj/xcshareddata/
+ios/Runner.app/
+ios/Runner.ipa
+
+# Other common ignores
+*.log
+*.lock
+*.g.dart # for generated files like freezed, json_serializable

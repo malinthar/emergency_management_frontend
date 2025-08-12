@@ -1,3 +1,4 @@
+import 'package:emergency_management_system/pages/chat.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: Text('Hello'),
+          child: Chat(),
         ),
       ),
     );
