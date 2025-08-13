@@ -7,12 +7,14 @@ class EmergencyDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final resources = (details["resources_alerted"] as List<dynamic>).join(", ");
 
     return Scaffold(
       backgroundColor: Color(0xFF336051),
       appBar: AppBar(
-        leading: Icon(Icons.close, color: Color(0xFFFAFAFA),),
+        leading: IconButton(
+          onPressed: () => Navigator.maybePop(context),
+          icon: Icon(Icons.close, color: Color(0xFFFAFAFA)),
+        ),
         forceMaterialTransparency: true,
         title: Text(
           "Aoteroa Aid",
@@ -45,7 +47,7 @@ class EmergencyDetails extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 75,),
+              SizedBox(height: 75),
 
               // Response Message
               Text(
@@ -70,7 +72,7 @@ class EmergencyDetails extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 50,),
+              SizedBox(height: 50),
 
               // Emergency Type
               Text(
@@ -94,33 +96,6 @@ class EmergencyDetails extends StatelessWidget {
                   ),
                 ),
               ),
-
-              SizedBox(height: 50,),
-
-              // Emergency Resources
-              Text(
-                "Resources Alerted/Nga Rauemi Pōwhai",
-                style: TextStyle(
-                  fontFamily: 'Tahoma',
-                  fontSize: 18,
-                  color: Color(0xFFEAF7F4),
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  resources,
-                  style: TextStyle(
-                    fontFamily: 'Tahoma',
-                    fontSize: 16,
-                    color: Color(0xFFEAF7F4),
-                  ),
-                ),
-              ),
-
-
             ],
           ),
         ),

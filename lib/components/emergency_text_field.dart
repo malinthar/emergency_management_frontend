@@ -80,6 +80,7 @@ class _EmergencyTextFieldState extends State<EmergencyTextField> {
                   cursorColor: const Color(0xFF336051),
                   maxLines: null,
                   style: const TextStyle(fontFamily: 'Tahoma', fontSize: 18),
+                  textCapitalization: TextCapitalization.sentences,
                   decoration: const InputDecoration(
                     isCollapsed: true, // remove default padding
                     hintText: 'Type here...',
