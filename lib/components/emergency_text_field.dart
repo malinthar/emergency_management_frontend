@@ -1,3 +1,4 @@
+import 'package:emergency_management_system/pages/emergency_details.dart';
 import 'package:emergency_management_system/services/flask_api_serivce.dart';
 import 'package:flutter/material.dart';
 
@@ -32,11 +33,20 @@ class _EmergencyTextFieldState extends State<EmergencyTextField> {
   void _sendMessage(String query) async {
     final text = _controller.text.trim();
     if (text.isEmpty) return;
-    
+
     _controller.clear();
 
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(child: CircularProgressIndicator(color: Colors.blue,)),
+    );
+
     try {
-      await callFlaskApi(query);
+      final response = await callFlaskApi(query);
+
+      Navigator.pop(context);
+      Navigator.push(context, MaterialPageRoute(builder:(context) => EmergencyDetails(details: response,),));
     } catch (e) {
       print(e);
     }
@@ -61,7 +71,8 @@ class _EmergencyTextFieldState extends State<EmergencyTextField> {
             // Text field expands up to 5 lines
             ConstrainedBox(
               constraints: const BoxConstraints(
-                maxHeight: 5 * 24.0 + 24, // approx line height * max lines + padding
+                maxHeight:
+                    5 * 24.0 + 24, // approx line height * max lines + padding
               ),
               child: Scrollbar(
                 child: TextField(
